@@ -1,4 +1,4 @@
-//https://www.thehuxley.com/problem/4413?quizId=9155
+//https://www.thehuxley.com/problem/4413?locale=pt_BR
 
 //Ha um jeito mais facil e rapido de fazer esse codigo mas foi um dos primeiros codigos em C que eu fiz, entao ficou bem baguncado
 
