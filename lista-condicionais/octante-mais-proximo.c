@@ -1,4 +1,4 @@
-//https://www.thehuxley.com/problem/4415?quizId=9155
+//https://www.thehuxley.com/problem/4415?locale=pt_BR
 
 #include <stdio.h>
 int main () {
