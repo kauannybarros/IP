@@ -17,77 +17,42 @@ int main () {
     //se os 3 tiverem ok
     if ((va <= veloc && va >= vmin) && (vb <= veloc && vb >= vmin) && (vc <= veloc && vc >= vmin)){
         
-        //se o K > T = G
-        if (vb == vc && va > vb && va > vc) {
+        //se o K > T = G ou K > T > G ou K = T > G
+        if ((vb == vc && va > vb && va > vc) || (va > vb && va > vc && vb > vc) || (va == vb && va > vc)) {
             printf("Xupenio pode utilizar o carro Kwid Laranja, cuja velocidade no percurso eh %.2f\n", va);
             printf("Xupenio pode utilizar o carro Tesla Branco, cuja velocidade no percurso eh %.2f\n", vb);
             printf("Xupenio pode utilizar o carro Gol Bolinha, cuja velocidade no percurso eh %.2f\n", vc);
         }
-        //se o K > T > G
-        else if (va > vb && va > vc && vb > vc) {
-            printf("Xupenio pode utilizar o carro Kwid Laranja, cuja velocidade no percurso eh %.2f\n", va);
-            printf("Xupenio pode utilizar o carro Tesla Branco, cuja velocidade no percurso eh %.2f\n", vb);
-            printf("Xupenio pode utilizar o carro Gol Bolinha, cuja velocidade no percurso eh %.2f\n", vc);
-        }
-        //se o K > G > T  
-        else if (va > vc && va > vb && vc > vb) {
-            printf("Xupenio pode utilizar o carro Kwid Laranja, cuja velocidade no percurso eh %.2f\n", va);
-            printf("Xupenio pode utilizar o carro Gol Bolinha, cuja velocidade no percurso eh %.2f\n", vc);
-            printf("Xupenio pode utilizar o carro Tesla Branco, cuja velocidade no percurso eh %.2f\n", vb);
-        }
-        //se o K = T > G
-        else if (va == vb && va > vc) {
-            printf("Xupenio pode utilizar o carro Kwid Laranja, cuja velocidade no percurso eh %.2f\n", va);
-            printf("Xupenio pode utilizar o carro Tesla Branco, cuja velocidade no percurso eh %.2f\n", vb);
-            printf("Xupenio pode utilizar o carro Gol Bolinha, cuja velocidade no percurso eh %.2f\n", vc);       
-            }
-        //se o K = G > T
-        else if (va == vc && va > vb) {
+            
+        //se o K > G > T  ou K = G > T
+        else if ((va > vc && va > vb && vc > vb) || (va == vc && va > vb))  {
             printf("Xupenio pode utilizar o carro Kwid Laranja, cuja velocidade no percurso eh %.2f\n", va);
             printf("Xupenio pode utilizar o carro Gol Bolinha, cuja velocidade no percurso eh %.2f\n", vc);
             printf("Xupenio pode utilizar o carro Tesla Branco, cuja velocidade no percurso eh %.2f\n", vb);
         }
         
-        
-        //se o T > K = G
-        else if (va == vc && vb > va && vb > vc) {
+        //se o T > K = G ou T > K > G
+        else if ((va == vc && vb > va && vb > vc) || (va > vb && va > vc && vb > vc)) {
             printf("Xupenio pode utilizar o carro Tesla Branco, cuja velocidade no percurso eh %.2f\n", vb);
             printf("Xupenio pode utilizar o carro Kwid Laranja, cuja velocidade no percurso eh %.2f\n", va);
             printf("Xupenio pode utilizar o carro Gol Bolinha, cuja velocidade no percurso eh %.2f\n", vc);
-        }
-        //se o T > K > G
-        else if (va > vb && va > vc && vb > vc) {
-            printf("Xupenio pode utilizar o carro Tesla Branco, cuja velocidade no percurso eh %.2f\n", vb);
-            printf("Xupenio pode utilizar o carro Kwid Laranja, cuja velocidade no percurso eh %.2f\n", va);
-            printf("Xupenio pode utilizar o carro Gol Bolinha, cuja velocidade no percurso eh %.2f\n", vc);
-        }
-        //se o T > G > K  
-        else if (vb > vc && vb > va && vc > va) {
-            printf("Xupenio pode utilizar o carro Tesla Branco, cuja velocidade no percurso eh %.2f\n", vb);
-            printf("Xupenio pode utilizar o carro Gol Bolinha, cuja velocidade no percurso eh %.2f\n", vc);
-            printf("Xupenio pode utilizar o carro Kwid Laranja, cuja velocidade no percurso eh %.2f\n", va);
         }
        
-        //se o T = G > K
-       else if (va == vc && va > vb) {
+        //se o T > G > K ou T = G > K
+        else if ((vb > vc && vb > va && vc > va) || (va == vc && va > vb)) {
             printf("Xupenio pode utilizar o carro Tesla Branco, cuja velocidade no percurso eh %.2f\n", vb);
             printf("Xupenio pode utilizar o carro Gol Bolinha, cuja velocidade no percurso eh %.2f\n", vc);
             printf("Xupenio pode utilizar o carro Kwid Laranja, cuja velocidade no percurso eh %.2f\n", va);
         }
         
         
-        //se o G > K = T
-        else if (va == vc && vc > va && vc > vb) {
+        //se o G > K = T ou G > K > T
+        else if ((va == vc && vc > va && vc > vb) || (vc > vb && vc > va && va > vb)) {
             printf("Xupenio pode utilizar o carro Gol Bolinha, cuja velocidade no percurso eh %.2f\n", vc);
             printf("Xupenio pode utilizar o carro Kwid Laranja, cuja velocidade no percurso eh %.2f\n", va);
             printf("Xupenio pode utilizar o carro Tesla Branco, cuja velocidade no percurso eh %.2f\n", vb);
         }
-        //se o G > K > T
-        else if (vc > vb && vc > va && va > vb) {
-            printf("Xupenio pode utilizar o carro Gol Bolinha, cuja velocidade no percurso eh %.2f\n", vc);
-            printf("Xupenio pode utilizar o carro Kwid Laranja, cuja velocidade no percurso eh %.2f\n", va);
-            printf("Xupenio pode utilizar o carro Tesla Branco, cuja velocidade no percurso eh %.2f\n", vb);
-        }
+            
         //se o G > T > K  
        else if (vc > vb && vb > va && vc > va) {
             printf("Xupenio pode utilizar o carro Gol Bolinha, cuja velocidade no percurso eh %.2f\n", vc);
