@@ -1,5 +1,7 @@
 //https://www.thehuxley.com/problem/4154?locale=pt_BR
 
+//teste
+
 #include <stdio.h>
 int main() {
     int adulto, crianca, limite, sobraadulto, sobracrianca, mesaadulto, mesacrianca, mesamista, mesaadulto1, mesacrianca1;
